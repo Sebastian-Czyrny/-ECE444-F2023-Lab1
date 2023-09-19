@@ -13,3 +13,8 @@ Screenshot of successful install of venv and flask
 
 Screenshot of Hello, Sebastian
 ![hello, my name](images/act2.jpg)
+
+## Activity 3
+
+Screenshot of page with Boostrap and Moment integrated
+![Bootstrap and Moment](images/act3.jpg)
