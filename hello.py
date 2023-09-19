@@ -18,8 +18,9 @@ def index():
     form = NameForm()
     if form.validate_on_submit():
         session['name'] = form.name.data
+        session['email'] = form.email.data
         return redirect(url_for('index'))
-    return render_template('index.html', form=form, name=session.get('name'))
+    return render_template('index.html', form=form, name=session.get('name'), email=session.get('email'))
 
 @app.route('/user/<name>')
 def user(name):
@@ -37,5 +38,5 @@ def internal_server_error(e):
 class NameForm(FlaskForm):
     name = StringField('What is your name?', validators=[DataRequired()])
     email = StringField("What is your UofT Email address?", validators=[DataRequired(),
-                                                                        Regexp('.*utoronto/.ca.*', 0, 'Invalid UofT email address. Email address must contain \'utoronto.ca\'')])
+                                                                        Regexp('.*utoronto\.ca.*', 0, 'Invalid UofT email address. Email address must contain \'utoronto.ca\'')])
     submit = SubmitField('Submit')
