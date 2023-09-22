@@ -46,6 +46,7 @@ Screenshots of activity 4
 
 ![form email error non UofT email](images/act4_4.jpg)
 
+### Extra
 Screenshot of flash messages upon successful update
 
 ![form flash messages](images/act4_5.jpg)
