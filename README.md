@@ -12,11 +12,20 @@ Screenshot of successful install of venv and flask
 
 ## Activity 2
 
+Screenshot of commits relating to completion of examples 2-1 and 2-2
+
+![commit message](images/act2_0.jpg)
+
 Screenshot of Hello, Sebastian
 
 ![hello, my name](images/act2.jpg)
 
 ## Activity 3
+
+Screenshot of commit relating to integration of flask moment
+
+![commit message](images/act3_0.jpg)
+
 
 Screenshot of page with Boostrap and Moment integrated
 
