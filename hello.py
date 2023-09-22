@@ -4,7 +4,7 @@ from flask_moment import Moment
 from datetime import datetime
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
-from wtforms.validators import DataRequired, Regexp
+from wtforms.validators import DataRequired, ValidationError
 
 app = Flask(__name__)
 moment = Moment(app)
@@ -35,8 +35,13 @@ def internal_server_error(e):
     return render_template('500.html'), 500
 
 
+def validate_email_utoronto(form, field):
+    if (field.data.find("@") == -1):
+        raise ValidationError(f'Please include an \'@\' in the email address. \'{field.data}\' is missing an \'@\'')
+    if (field.data.find("utoronto") == -1):
+        raise ValidationError(f'Not a valid UofT email address. \'{field.data}\' must contain \'utoronto\'')
+
 class NameForm(FlaskForm):
     name = StringField('What is your name?', validators=[DataRequired()])
-    email = StringField("What is your UofT Email address?", validators=[DataRequired(),
-                                                                        Regexp('.*utoronto\.ca.*', 0, 'Invalid UofT email address. Email address must contain \'utoronto.ca\'')])
+    email = StringField("What is your UofT Email address?", validators=[DataRequired(), validate_email_utoronto])
     submit = SubmitField('Submit')
