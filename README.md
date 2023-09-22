@@ -26,6 +26,10 @@ Screenshot of page with Boostrap and Moment integrated
 
 Screenshots of activity 4
 
+1. Screenshot of commits showing completion of steps 1 and 2
+
+![commits for act4 steps 1,2](images/act4_0.jpg)
+
 2. Screenshot of form
 
 ![form screenshot](images/act4_1.jpg)
