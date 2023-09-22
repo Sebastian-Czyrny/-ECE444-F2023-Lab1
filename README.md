@@ -29,7 +29,7 @@ Screenshot of commit relating to integration of flask moment
 
 Screenshot of page with Boostrap and Moment integrated
 
-![Bootstrap and Moment](images/act3.jpg)
+![Bootstrap and Moment](images/act3_updated.jpg)
 
 ## Activity 4
 
