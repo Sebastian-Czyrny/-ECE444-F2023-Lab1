@@ -1,4 +1,4 @@
-from flask import Flask, render_template, session, redirect, url_for
+from flask import Flask, render_template, session, redirect, url_for, flash
 from flask_bootstrap import Bootstrap
 from flask_moment import Moment
 from datetime import datetime
@@ -17,6 +17,15 @@ app.config['SECRET_KEY'] = '23J1CJIO23NO12IJL1NL'
 def index():
     form = NameForm()
     if form.validate_on_submit():
+        # check for old_name and email
+        old_name = session.get('name')
+        old_email = session.get('email')
+        if old_name is not None and old_name != form.name.data:
+            flash('Looks like you have changed your name!')
+        if old_email is not None and old_email != form.email.data:
+            flash('Looks like you have changed your email!')
+        
+        # update email and name
         session['name'] = form.name.data
         session['email'] = form.email.data
         return redirect(url_for('index'))
