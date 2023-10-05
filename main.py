@@ -6,11 +6,13 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired, ValidationError
 
+
 app = Flask(__name__)
 moment = Moment(app)
 bootstrap = Bootstrap(app)
 
 app.config['SECRET_KEY'] = '23J1CJIO23NO12IJL1NL'
+
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -54,3 +56,7 @@ class NameForm(FlaskForm):
     name = StringField('What is your name?', validators=[DataRequired()])
     email = StringField("What is your UofT Email address?", validators=[DataRequired(), validate_email_utoronto])
     submit = SubmitField('Submit')
+
+
+if __name__ == "__main__": 
+    app.run(host ='0.0.0.0', port = 5000, debug = True)
